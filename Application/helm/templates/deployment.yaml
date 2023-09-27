@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: {{ .Release.Name }}
   annotations:
-    checksum/config: {{ include (print $.Template.BasePath "/ConfigMaps.yaml") . | sha256sum }}
+    checksum/config: {{ include (print $.Template.BasePath "ConfigMaps.yaml") . | sha256sum }}
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
