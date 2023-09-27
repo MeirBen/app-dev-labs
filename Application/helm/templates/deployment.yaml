@@ -35,8 +35,8 @@ spec:
           livenessProbe:
             {{- tpl (toYaml .Values.Probes.liveness) . | nindent 12 }}
           env:
-          - name: PORT
-            value: {{ .Values.containers.containerPort | quote }}
+            - name: PORT
+              value: {{ .Values.containers.containerPort | quote }}
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
