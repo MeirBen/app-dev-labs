@@ -21,7 +21,7 @@ Probes:
     failureThreshold: 3
   liveness:
     httpGet:
-      path: '/health/livelianess'
+      path: '/health/liveliness'
       port: 8080
       scheme: 'HTTP'
     initialDelaySeconds: 1
