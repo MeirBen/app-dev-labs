@@ -8,3 +8,26 @@ containers:
 
 service:
   servicePort: 8080
+
+Probes:
+  readiness:
+    httpGet:
+      path: "/health/readiness"
+    initialDelaySeconds: 1
+    timeoutSeconds: 1
+    periodSeconds: 10
+    successThreshold: 1
+    failureThreshold: 3
+  liveness:
+    httpGet:
+      path: "/health/liveliness"
+    initialDelaySeconds: 1
+    timeoutSeconds: 1
+    periodSeconds: 10
+    successThreshold: 1
+    failureThreshold: 3
+    
+volumeMounts:
+  - name: "index-html"
+    mount:
+      path: "/tmp/html" # Current mountPath from your deployment
