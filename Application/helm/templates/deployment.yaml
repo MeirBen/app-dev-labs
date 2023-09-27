@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: {{ include ("/ConfigMap.yaml") . | sha256sum }}
+        checksum/config: {{ include (print $.Template.BasePath "ConfigMaps.yaml") . | sha256sum }}
       labels:
         app: {{ .Release.Name }}
     spec:
