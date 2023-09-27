@@ -2,8 +2,6 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: {{ .Release.Name }}
-  annotations:
-    checksum/config: {{ include (print $.Template.BasePath "ConfigMaps.yaml") . | sha256sum }}
 spec:
   replicas: {{ .Values.ReplicaNumber }}
   selector:
@@ -11,6 +9,8 @@ spec:
       app: {{ .Release.Name }}
   template:
     metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "ConfigMaps.yaml") . | sha256sum }}
       labels:
         app: {{ .Release.Name }}
     spec:
