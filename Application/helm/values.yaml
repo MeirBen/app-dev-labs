@@ -14,7 +14,7 @@ Probes:
       path: '/health/readiness'
       port: 8080
       scheme: 'HTTP'
-    initialDelaySeconds: 1
+    initialDelaySeconds: 2
     timeoutSeconds: 1
     periodSeconds: 10
     successThreshold: 1
