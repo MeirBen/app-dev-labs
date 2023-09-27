@@ -3,7 +3,7 @@ ReplicaNumber: 1
 containers:
   containerPort: 8080
   image: 'quay.io/metal4life/mycoolimage'
-  tag: 'chart_v30'
+  tag: 'chart_v31'
   
 
 service:
@@ -13,8 +13,8 @@ Probes:
   readiness:
     httpGet:
       path: '/health/readiness'
-      port: 8080
       schema: 'HTTP'
+      port: 8080
     initialDelaySeconds: 1
     timeoutSeconds: 1
     periodSeconds: 10
@@ -23,8 +23,8 @@ Probes:
   liveness:
     httpGet:
       path: '/health/liveliness'
-      port: 8080
       schema: 'HTTP'
+      port: 8080
     initialDelaySeconds: 1
     timeoutSeconds: 1
     periodSeconds: 10
