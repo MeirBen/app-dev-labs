@@ -13,7 +13,7 @@ Probes:
     httpGet:
       path: '/health/readiness'
       port: 8080
-      schema: 'HTTP'
+      scheme: 'HTTP'
     initialDelaySeconds: 1
     timeoutSeconds: 1
     periodSeconds: 10
@@ -23,7 +23,7 @@ Probes:
     httpGet:
       path: '/health/liveliness'
       port: 8080
-      schema: 'HTTP'
+      scheme: 'HTTP'
     initialDelaySeconds: 1
     timeoutSeconds: 1
     periodSeconds: 10
