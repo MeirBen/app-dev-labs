@@ -12,9 +12,9 @@ service:
 Probes:
   readiness:
     httpGet:
-      path: "/health/readiness"
+      path: '/health/readiness'
       port: 8080
-      schema: HTTP
+      schema: 'HTTP'
     initialDelaySeconds: 1
     timeoutSeconds: 1
     periodSeconds: 10
@@ -22,9 +22,9 @@ Probes:
     failureThreshold: 3
   liveness:
     httpGet:
-      path: "/health/liveliness"
+      path: '/health/liveliness'
       port: 8080
-      schema: HTTP
+      schema: 'HTTP'
     initialDelaySeconds: 1
     timeoutSeconds: 1
     periodSeconds: 10
@@ -32,6 +32,6 @@ Probes:
     failureThreshold: 3
     
 volume:
-  - name: index-html
+  - name: 'index-html'
     mount:
-      path: /tmp/html # Current mountPath from your deployment
+      path: '/tmp/html'
