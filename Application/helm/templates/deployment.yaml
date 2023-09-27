@@ -28,8 +28,8 @@ spec:
           terminationMessagePolicy: File
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
           volumeMounts:
-            - name: {{ (index .Values.volumeMounts 0).name }}
-              mountPath: {{ (index .Values.volumeMounts 0).mountPath }}
+            - name: {{ (index .Values.volume 0).name }}
+              mountPath: {{ (index .Values.volume 0).mount.path }}
           readinessProbe:
             {{- tpl (toYaml .Values.Probes.readiness) . | nindent 12 }}
           livenessProbe:

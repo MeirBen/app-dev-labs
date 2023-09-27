@@ -3,7 +3,7 @@ ReplicaNumber: 1
 containers:
   containerPort: 8080
   image: 'quay.io/metal4life/mycoolimage'
-  tag: 'chart_v26'
+  tag: 'chart_v27'
   
 
 service:
@@ -31,6 +31,7 @@ Probes:
     successThreshold: 1
     failureThreshold: 3
     
-volumeMounts:
+volume:
   - name: "index-html"
-    mountPath: "/tmp/html" # Current mountPath from your deployment
+    mount:
+      path: "/tmp/html" # Current mountPath from your deployment
