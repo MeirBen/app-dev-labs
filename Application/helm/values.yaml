@@ -34,3 +34,6 @@ volume:
   - name: 'index-html'
     mount:
       path: '/tmp/html'
+
+configmap:
+  revision: 'initial'
