@@ -32,6 +32,6 @@ Probes:
     failureThreshold: 3
     
 volume:
-  - name: "index-html"
+  - name: index-html
     mount:
-      path: "/tmp/html" # Current mountPath from your deployment
+      path: /tmp/html # Current mountPath from your deployment
