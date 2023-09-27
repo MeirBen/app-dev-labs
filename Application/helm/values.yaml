@@ -3,7 +3,7 @@ ReplicaNumber: 3
 containers:
   containerPort: 8080
   image: 'quay.io/metal4life/mycoolimage'
-  tag: 'chart_v9'
+  tag: 'chart_v10'
   
 
 service:
