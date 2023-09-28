@@ -1,0 +1,51 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Release.Name }}-1
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+spec:
+  replicas: {{ .Values.ReplicaNumber }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-1
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/ConfigMap.yaml") . | sha256sum }}
+      labels:
+        app: {{ .Release.Name }}-1
+    spec:
+      volumes:
+        - name: index-html
+          configMap:
+            name: index.html
+            defaultMode: 420
+      containers:
+        - resources: {}
+          terminationMessagePath: /dev/termination-log
+          name: {{ .Release.Name }}-1
+          ports:
+            - containerPort: {{ .Values.containers.containerPort }}
+              protocol: TCP
+          imagePullPolicy: Always
+          terminationMessagePolicy: File
+          image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
+          volumeMounts:
+            - name: {{ (index .Values.volume 0).name }}
+              mountPath: {{ (index .Values.volume 0).mount.path }}
+          readinessProbe:
+      {{- tpl (toYaml .Values.Probes.readiness) . | nindent 12 }}
+          livenessProbe:
+      {{- tpl (toYaml .Values.Probes.liveness) . | nindent 12 }}
+          env:
+            - name: PORT
+              value: {{ .Values.containers.containerPort | quote }}
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
