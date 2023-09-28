@@ -7,6 +7,7 @@ spec:
   to:
     kind: Service
 # set your user name
+
     name:  user6-ng
     weight: 100
   port:
