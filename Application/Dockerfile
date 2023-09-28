@@ -11,3 +11,5 @@ RUN npm run build
 FROM registry.access.redhat.com/ubi8/nginx-120:latest
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /tmp/ngapp/dist/ngapp /usr/share/nginx/html
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
