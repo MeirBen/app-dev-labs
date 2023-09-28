@@ -7,8 +7,8 @@ containers:
 
 service:
   servicePort: 8080
-  
-test: Healthy
+
+test: UnHealthy
 
 Probes:
   readiness:
