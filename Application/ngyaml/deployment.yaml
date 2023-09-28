@@ -18,13 +18,13 @@ spec:
       containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
-          name: ng-conatiner
+          name: ng
           ports:
             - containerPort: 8080
               protocol: TCP
           imagePullPolicy: IfNotPresent
 # update with the image you build in part 1
-          image: 'quay.io/metal4life/mycoolimage:v46'
+          image: 'quay.io/metal4life/mycoolimage:ng_v46'
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
