@@ -20,7 +20,7 @@ spec:
           terminationMessagePath: /dev/termination-log
           name: ng
           ports:
-            - containerPort: 80
+            - containerPort: 8080
               protocol: TCP
           imagePullPolicy: IfNotPresent
 # update with the image you build in part 1
