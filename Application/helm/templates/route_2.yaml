@@ -5,7 +5,7 @@ metadata:
 spec:
   to:
     kind: Service
-    name: {{ .Release.Name }}-2-service
+    name: {{ .Release.Name }}-service
     weight: 100
   port:
     targetPort: {{ .Values.service.servicePort }}
