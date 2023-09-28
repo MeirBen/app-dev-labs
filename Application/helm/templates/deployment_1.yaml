@@ -14,7 +14,7 @@ spec:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/ConfigMap.yaml") . | sha256sum }}
       labels:
-        app: {{ .Release.Name }}
+        app: {{ .Release.Name }}-2
     spec:
       volumes:
         - name: index-html
@@ -24,7 +24,7 @@ spec:
       containers:
         - resources: {}
           terminationMessagePath: /dev/termination-log
-          name: {{ .Release.Name }}
+          name: {{ .Release.Name }}-2
           ports:
             - containerPort: {{ .Values.containers.containerPort }}
               protocol: TCP
