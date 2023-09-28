@@ -26,7 +26,7 @@ spec:
 # update with the image you build in part 1
           image: 'quay.io/metal4life/mycoolimage:ng_v50'
       restartPolicy: Always
-      terminationGracePeriodSeconds: 30
+      terminationGracePeriodSeconds: 60
   strategy:
     type: RollingUpdate
     rollingUpdate:
