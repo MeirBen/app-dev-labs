@@ -8,7 +8,7 @@ containers:
 service:
   servicePort: 8080
 
-test: null
+test: Null
 
 github:
   user: MeirBen
