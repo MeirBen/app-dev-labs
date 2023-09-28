@@ -1,7 +1,7 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: {{ .Release.Name }}-route
+  name: {{ .Release.Name }}-2-route
 spec:
   to:
     kind: Service
