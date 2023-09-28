@@ -10,5 +10,5 @@ spec:
     name:  user6-ng
     weight: 100
   port:
-    targetPort: 8080
+    targetPort: 80
   wildcardPolicy: None
