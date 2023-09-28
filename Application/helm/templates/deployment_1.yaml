@@ -14,7 +14,7 @@ spec:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/ConfigMap.yaml") . | sha256sum }}
       labels:
-        app: {{ .Release.Name }}-1
+        app: {{ .Release.Name }}
     spec:
       volumes:
         - name: index-html
