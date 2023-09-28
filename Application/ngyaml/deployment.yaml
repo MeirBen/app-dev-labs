@@ -24,7 +24,7 @@ spec:
               protocol: TCP
           imagePullPolicy: IfNotPresent
 # update with the image you build in part 1
-          image: 'quay.io/metal4life/mycoolimage:ng_v50'
+          image: 'quay.io/metal4life/mycoolimage:ng_v51'
       restartPolicy: Always
       terminationGracePeriodSeconds: 60
   strategy:
