@@ -8,5 +8,4 @@ spec:
       port: {{ .Values.service.servicePort }}
       targetPort: {{ .Values.containers.containerPort }}
   selector:
-    app1: {{ .Release.Name }}
-    app2: {{ .Release.Name }}
+    app: {{ .Release.Name }}
