@@ -10,6 +10,11 @@ service:
 
 test: Healthy
 
+github:
+  user: MeirBen
+  token: empty-pass
+  url: https://api.github.com/repos/MeirBen/app-dev-labs/issues
+
 Probes:
   readiness:
     httpGet:
